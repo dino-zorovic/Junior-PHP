@@ -2,7 +2,7 @@
     include 'connect.php';
     $user_id_form = $_POST['user_id'];
     
-    $sql = "SELECT * FROM ma where user_id ='$user_id_form'";
+    $sql = "SELECT * FROM users where user_id ='$user_id_form'";
     $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 
 
