@@ -4,8 +4,7 @@ if (empty($_POST['date'])) {
     $user = 'now';
 } 
 else {
-    $user = $_POST['date'];
-    
+    $user = $_POST['date'];    
 }
 
 $testdate = new DateTime($user);
@@ -36,7 +35,7 @@ function timeleft ($period, $user_input){
 
     if ($dt > $current_date) {
         $razlika_svega = $dt->diff($current_date);
-        echo $razlika_svega->format("%a days, %h hours, %i minutes, %s seconds");
+        echo $razlika_svega->format("Next lottery drawing is in %a days, %h hours, %i minutes, %s seconds");
         break;
         
     }
@@ -58,4 +57,4 @@ else {
      timeleft($second_period, $user);     
 }
 
-    ?>
+?>
