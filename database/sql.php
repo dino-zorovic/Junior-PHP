@@ -12,7 +12,7 @@ last_updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 )";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Table MyGuests created successfully";
+    echo "Table Users created successfully";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
