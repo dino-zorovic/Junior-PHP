@@ -1,0 +1,66 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Calculator</title>
+ 
+<script>  
+
+     var ar = [6, "times", 6]
+     
+       function times(t1, t2) {
+          var t1;
+           var t2;
+           var multiply = t1 * t2;
+           console.log(multiply);
+         
+       }
+       
+       function minus(m1, m2) {
+         var m1;
+           var m2;         
+         var substract = +m1 - +m2;
+           console.log(substract);
+         
+       }
+       function divide(d1, d2) {
+         var d1;
+           var d2;         
+         var div = d1 / d2;
+           console.log(div);
+           
+       }
+         function plus(p1, p2) {
+         var p1;
+           var p2;         
+         var add = +p1 + +p2;
+           console.log(add);
+         
+       }
+      
+         for (i =0; i < ar.length; i++) {  
+             
+          var  first = i - 1;
+          var  second = 1 + i;
+          
+             
+             if (isNaN(ar[i]) == true){
+                 console.log(ar[first])
+                 console.log(ar[i])
+                 console.log(ar[second])        
+             window[ar[i]](ar[first], ar[second]);
+             }
+             
+       }
+
+</script>
+</head>
+
+<body>
+  <input id="numb"></input>
+    <button type="button" onclick="calc()">Submit</button>
+    <p id="demo"></p>
+</body>
+</html>

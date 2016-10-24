@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+    <script>
+var complexArray = [3, 'Plus', [6, 'Plus', 2],'Minus',[6,'Plus',[3,'Times',2]]];
+//var complexArray = [8,'Times',2,'Plus',6];
+var operations = ['Plus','Minus', 'Times', 'Divide']
+
+function calc() {
+    var res = evaluate(complexArray);
+    console.log(res);
+  }
+
+    function evaluate(expression){
+    var leftSide = null;
+    var rightSide = null;
+    var operation;
+    var currRes = 0;
+        for(var i = 0; i < expression.length; i++){
+             if (isNaN(expression[i])){   
+                 if(operations.indexOf(expression[i]) == -1)
+           {
+                     if(Array.isArray(expression[i])){
+                         rightSide = evaluate(expression[i]);
+                         currRes = doOperation(leftSide, rightSide, operation);
+               rightSide = null;
+               leftSide = currRes;
+             }
+           }
+         else{
+              operation = expression[i];
+         }
+       }
+       else{
+             if(leftSide == null){
+             leftSide = expression[i];
+         }
+         else{
+           rightSide = expression[i];
+           currRes = doOperation(leftSide, rightSide, operation);
+           rightSide = null;
+           leftSide = currRes;         
+         }
+       }   
+    }
+    return leftSide;
+  }
+
+  function doOperation(leftSide,rightSide,operation){
+    switch(operation){
+      case 'Times':
+        return leftSide * rightSide;
+      case 'Plus':
+        return leftSide + rightSide;
+      case 'Minus':
+        return leftSide - rightSide;
+      case 'Divide':
+        return leftSide / rightSide;
+    }
+  }
+
+    </script>
+</head>
+<body>
+  <input id="calculator"></input>
+  <button type="button" onclick="calc()">Submit</button>
+
+</body>
+</html>
