@@ -1,7 +1,7 @@
 <?php
 include 'connect.php';
 
-$sql = "CREATE TABLE MA (
+$sql = "CREATE TABLE users (
 user_id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
 name VARCHAR(60) NOT NULL,
 age int(2) NOT NULL,
