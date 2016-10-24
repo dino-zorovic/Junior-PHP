@@ -34,8 +34,8 @@ function timeleft ($period, $user_input){
     foreach ( $period as $dt ) { 
 
     if ($dt > $current_date) {
-        $razlika_svega = $dt->diff($current_date);
-        echo $razlika_svega->format("Next lottery drawing is in %a days, %h hours, %i minutes, %s seconds");
+        $difference = $dt->diff($current_date);
+        echo $difference->format("Next lottery drawing is in %a days, %h hours, %i minutes, %s seconds");
         break;
         
     }
